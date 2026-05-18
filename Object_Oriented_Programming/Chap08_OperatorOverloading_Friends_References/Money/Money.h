@@ -14,7 +14,12 @@ class Money {
         int getCents() const;
         void input();
         void output() const;
-    
+
+        friend const Money operator +(const Money &amount1, const Money &amount2);
+        friend const Money operator -(const Money &amount1, const Money &amount2);
+        friend bool operator ==(const Money &amount1, const Money &amount2);
+        friend const Money operator -(const Money &amount);
+
     private:
         int dollars;
         int cents;

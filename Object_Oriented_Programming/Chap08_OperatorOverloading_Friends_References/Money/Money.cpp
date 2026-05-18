@@ -2,6 +2,7 @@
 #include "Money.h"
 using namespace std;
 
+// Constructor Definition
 Money::Money()
     : dollars(0), cents(0) { }
 
@@ -20,6 +21,48 @@ Money::Money(int theDollars, int theCents) {
 
         dollars = theDollars;
         cents = theCents;
+}
+
+// Function Definition
+const Money operator +(const Money &amount1, const Money &amount2) {
+    int allCents1 = amount1.cents + amount1.dollars*100;
+    int allCents2 = amount2.cents + amount2.dollars*100;
+    int totalAllCents = allCents1 + allCents2;
+    int absAllCents = abs(totalAllCents);
+    int finalDollars = absAllCents / 100;
+    int finalCents = absAllCents % 100;
+
+    if (totalAllCents < 0) {
+        finalDollars = -finalDollars;
+        finalCents = -finalCents;
+    }
+
+    return Money(finalDollars, finalCents);
+}
+
+bool operator ==(const Money &amount1, const Money &amount2) {
+    return ((amount1.dollars == amount2.dollars) && (amount1.cents == amount2.cents));
+}
+
+const Money operator -(const Money &amount1, const Money &amount2) {
+    int allCents1 = amount1.dollars * 100 + amount1.cents;
+    int allCents2 = amount2.dollars * 100 + amount2.cents;
+
+    int totalAllCents = allCents1 - allCents2;
+    int absAllCents = abs(totalAllCents);
+    int finalDollars = absAllCents / 100;
+    int finalCents = absAllCents % 100;
+
+    if (totalAllCents < 0) {
+        finalDollars = -finalDollars;
+        finalCents = -finalCents;
+    }
+
+    return Money(finalDollars, finalCents);
+}
+
+const Money operator -(const Money &amount) {
+    return Money(-amount.dollars, -amount.cents);
 }
 
 double Money::getAmount() const {
