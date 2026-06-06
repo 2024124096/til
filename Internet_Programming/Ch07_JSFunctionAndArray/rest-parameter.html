@@ -1,0 +1,11 @@
+<script>
+    function sum(...args) {
+        let sum = 0;
+        for (let arg of args) sum += arg;
+        return sum;
+    }
+
+    let x = sum(1, 10, 100, 1000, 10000, 100000, 1000000);
+    document.getElementById("demo").innerHTML = x;
+</script>
+

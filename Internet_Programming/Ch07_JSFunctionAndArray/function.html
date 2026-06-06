@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Maximun of Three Values</title>
+    <style type = "text/css">
+        p { margin: 0.5em; }
+    </style>
+
+    <script>
+        let input1 = window.prompt( "Enter first number", "0");
+        let input2 = window.prompt( "Enter second number", "0");
+        let input3 = window.prompt( "Enter third number", "0");
+
+        let value1 = parseFloat( input1 );
+        let value2 = parseFloat( input2 );
+        let value3 = parseFloat( input3 );
+
+        // 이렇게 definition 전에 호출 먼저 가능함
+        let maxValue = maximum( value1, value2, value3);
+
+        document.writeln( "<p>First number: " + value1 + "</p>" +
+            "<p>Second number: " + value2 + "</p>" +
+            "<p>Thrid number: " + value3 + "</p>" +
+            "<p>Maximum is: " + maxValue+ "</p>"
+        );
+
+        // maximum function def
+        function maximum(x, y, z) {
+            return Math.max(x, Math.max(y,z));
+        }
+    </script>
+    </head>
+
+    <body>
+        <hr><p>Refresh to run the script again</p>
+    </body>
+</html>
+
