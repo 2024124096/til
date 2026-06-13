@@ -1,0 +1,43 @@
+<?xml version = "1.0"?>
+
+<!--letter.xml-->
+<!--Business letter marked up as XML-->
+
+<!DOCTYPE letter SYSTEM "letter.dtd">
+<!--DOCTYPE에 dtd 파일 경로를 써줘야 함.-->
+
+<letter>
+    <contact type="sender">
+        <name>Jane Doe</name>
+        <address1>Box 12345</address1>
+        <address2>15 Any Ave.</address2>
+        <city>Othertown</city>
+        <state>Otherstate</state>
+        <zip>93244</zip>
+        <phone>949-3945</phone>
+        <flag gender="F"/>
+    </contact>
+
+    <contact type="receiver">
+        <name>Jane Doe</name>
+        <address1>123 Main St.</address1>
+        <address2></address2>
+        <city>Anytown</city>
+        <state>Anystate</state>
+        <zip>12345</zip>
+        <phone>444-2444</phone>
+        <flag gender="M"/>
+    </contact>
+
+    <salutation>Dear Sir:</salutation>
+
+    <paragraph>It is our fjglakrjgoregjgoijgs;dlfkgj;lskfj;epg jporjg
+        flghdafgoihgeorghiheohoe
+        fjgheowgheoithrotihgoriehgire
+    </paragraph>
+
+    <paragraph>Please visit out Website.</paragraph>
+
+    <closing>Sincerely,</closing>
+    <signature>Ms. Jane Doe</signature>
+</letter>
